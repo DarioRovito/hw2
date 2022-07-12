@@ -19,7 +19,7 @@ class like extends Model
     }
  
     public function Post(){
-        return $this->hasMany("App\Models\Post","id","id");
+        return $this->hasMany("App\Models\Post","user","id");
     }
 
 
