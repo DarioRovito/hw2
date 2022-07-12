@@ -43,7 +43,6 @@ class PostController extends Controller {
       $array[$i]=array_merge($array[$i],array("liked"=>'0'));
       $i++;
   }
-    json_encode($array);
   return response()->json($array);
 }
 else
