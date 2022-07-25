@@ -11,8 +11,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 */
 
-Route::get('/', function () {return view('welcome');});
-
 //Generali
 Route::get("/login", "App\Http\Controllers\LoginController@login")->name("login");
 Route::post("/login", "App\Http\Controllers\LoginController@verify_Login");
@@ -30,7 +28,7 @@ Route::get("register/username/{q}", "App\Http\Controllers\RegisterController@ver
 Route::get('/postone', 'App\Http\Controllers\PostController@post');
 Route::get('/postfollow','App\Http\Controllers\PostController@postfollow');
 
-//Ricercare persone
+//Ricercare utenti
 Route::get('/search_people', 'App\Http\Controllers\SearchPeopleController@index')->name('search_people');
 Route::post('/search_utente', 'App\Http\Controllers\SearchPeopleController@search_utente');
 Route::post('/search_utenti', 'App\Http\Controllers\SearchPeopleController@search_utenti');
