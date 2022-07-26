@@ -20,9 +20,9 @@ class LoginController extends Controller {
      }
 
      public function verify_Login() {
-        $user = User::where('username', request('username'))->where('password', password_verify(request('password'), 'password'))->first();
+       $user = User::where('username', request('username'))->first();
 
-        if($user !== null) {
+        if($user !== null  && password_verify(request('password'),$user->password)){
             Session::put('user_id', $user->id);
             Session::put('username',  $user->username);
             return redirect('home');
